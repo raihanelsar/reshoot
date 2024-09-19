@@ -63,6 +63,16 @@
           <li><a href="#"><span class="icon-twitter"></span></a></li>
           <li><a href="#"><span class="icon-linkedin"></span></a></li>
         </ul>
+
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider round"></span>
+          </label>
+          <span id="icon-light" style="display: block;">🌞</span>
+          <span id="icon-dark" style="display: none;">🌙</span>
+        </div>
+        
       </div>
     </header> 
     <main class="main-content">
@@ -248,6 +258,45 @@
   <script src="js/jquery.fancybox.min.js"></script>
 
   <script src="js/main.js"></script>
+
+  <script>
+    const modeToggle = document.getElementById('mode-toggle');
+    const body = document.body;
+    const iconLight = document.getElementById('icon-light');
+    const iconDark = document.getElementById('icon-dark');
+
+    // Function to enable dark mode
+    const enableDarkMode = () => {
+      body.classList.add('dark-mode');
+      localStorage.setItem('dark-mode', 'enabled');
+      iconLight.style.display = 'none';
+      iconDark.style.display = 'block';
+    };
+
+    // Function to disable dark mode
+    const disableDarkMode = () => {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('dark-mode', 'disabled');
+      iconLight.style.display = 'block';
+      iconDark.style.display = 'none';
+    };
+
+    // Load saved mode from localStorage
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      enableDarkMode();
+      modeToggle.checked = true;
+    }
+
+    // Add event listener to toggle
+    modeToggle.addEventListener('change', () => {
+      if (modeToggle.checked) {
+        enableDarkMode();
+      } else {
+        disableDarkMode();
+      }
+    });
+  </script>
+  
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   </body>
