@@ -18,8 +18,7 @@ Aplikasi ini dikembangkan menggunakan teknologi web modern dengan fokus pada tam
 ## 🛠️ Teknologi yang Digunakan
 
 - **HTML5** – struktur halaman  
-- **CSS3 / TailwindCSS (opsional jika digunakan)** – styling modern dan responsif  
-- **JavaScript (Vanilla)** – logika interaktif  
+- **CSS3 – styling modern dan responsif    
 - **Git & GitHub** – versi kontrol dan hosting proyek  
 
 ---
